@@ -253,7 +253,7 @@ set hidden
 "Command-T configuration
 let g:CommandTMaxHeight=10
 let g:CommandTMatchWindowAtTop=1
-
+colorscheme tir_black 
 if has("gui_running")
     "tell the term has 256 colors
     set t_Co=256
@@ -270,7 +270,7 @@ if has("gui_running")
     endif
 
     if has("gui_mac") || has("gui_macvim")
-        set guifont=Inconsolata:15
+        set guifont=Consolas:15
         " key binding for Command-T to behave properly
         " uncomment to replace the Mac Command-T key to Command-T plugin
         "macmenu &File.New\ Tab key=<nop>
@@ -408,5 +408,6 @@ let ScreenShot = {'Icon':0, 'Credits':0, 'force_background':'#FFFFFF'}
 map ,e :e ~/.vimrc<cr>      " edit my .vimrc file
 map ,u :source ~/.vimrc<cr> " update the system settings from my vimrc file
 
+map \ff :FufFile<cr>
 " Directories for swp files
 
