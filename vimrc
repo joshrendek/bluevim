@@ -253,17 +253,19 @@ set hidden
 "Command-T configuration
 let g:CommandTMaxHeight=10
 let g:CommandTMatchWindowAtTop=1
+colorscheme tir_black 
 
 if has("gui_running")
     "tell the term has 256 colors
     set t_Co=256
 
-    colorscheme railscasts
+    colorscheme tir_black 
     set guitablabel=%M%t
     set lines=40
     set columns=115
 
     if has("gui_gnome")
+<<<<<<< HEAD
         set term=gnome-256color
         colorscheme railscasts
         set guifont=Inconsolata\ Normal\ 14
@@ -271,6 +273,15 @@ if has("gui_running")
 
     if has("gui_mac") || has("gui_macvim")
         set guifont=Inconsolata:h14
+=======
+        set term=builtin_gui
+        colorscheme tir_black
+        set guifont=Inconsolata\ Medium\ 12
+    endif
+
+    if has("gui_mac") || has("gui_macvim")
+        set guifont=Inconsolata:15
+>>>>>>> 8ef85eb4190f50fbd819d6682e4d8b65c37c3135
         " key binding for Command-T to behave properly
         " uncomment to replace the Mac Command-T key to Command-T plugin
         "macmenu &File.New\ Tab key=<nop>
@@ -284,7 +295,7 @@ if has("gui_running")
     endif
 
     if has("gui_win32") || has("gui_win32s")
-        set guifont=Consolas:h12
+        set guifont=Inconsolata:15
         set enc=utf-8
     endif
 else
@@ -403,4 +414,16 @@ nmap <D-]> >>
 vmap <D-[> <gv
 vmap <D-]> >gv
 
-let ScreenShot = {'Icon':0, 'Credits':0, 'force_background':'#FFFFFF'} 
+let ScreenShot = {'Icon':0, 'Credits':0, 'force_background':'#FFFFFF'}
+
+map ,e :e ~/.vimrc<cr>      " edit my .vimrc file
+map ,u :source ~/.vimrc<cr> " update the system settings from my vimrc file
+
+" Directories for swp files
+nmap <leader>ff :FufFile **/<CR>
+set nobackup
+set nowritebackup
+set noswapfile
+set ts=4 sw=4 et
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1

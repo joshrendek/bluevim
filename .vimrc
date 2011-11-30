@@ -254,6 +254,10 @@ set hidden
 let g:CommandTMaxHeight=10
 let g:CommandTMatchWindowAtTop=1
 colorscheme tir_black 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8ef85eb4190f50fbd819d6682e4d8b65c37c3135
 if has("gui_running")
     "tell the term has 256 colors
     set t_Co=256
@@ -270,7 +274,11 @@ if has("gui_running")
     endif
 
     if has("gui_mac") || has("gui_macvim")
+<<<<<<< HEAD
         set guifont=Consolas:15
+=======
+        set guifont=Inconsolata:15
+>>>>>>> 8ef85eb4190f50fbd819d6682e4d8b65c37c3135
         " key binding for Command-T to behave properly
         " uncomment to replace the Mac Command-T key to Command-T plugin
         "macmenu &File.New\ Tab key=<nop>
@@ -408,6 +416,16 @@ let ScreenShot = {'Icon':0, 'Credits':0, 'force_background':'#FFFFFF'}
 map ,e :e ~/.vimrc<cr>      " edit my .vimrc file
 map ,u :source ~/.vimrc<cr> " update the system settings from my vimrc file
 
+<<<<<<< HEAD
 map \ff :FufFile<cr>
 " Directories for swp files
 
+=======
+" Directories for swp files
+nmap <leader>ff :FufFile **/<CR>
+set nobackup
+set nowritebackup
+set noswapfile
+
+set ts=4 sw=4 noet
+>>>>>>> 8ef85eb4190f50fbd819d6682e4d8b65c37c3135
