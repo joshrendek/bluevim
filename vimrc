@@ -265,15 +265,6 @@ if has("gui_running")
     set columns=115
 
     if has("gui_gnome")
-<<<<<<< HEAD
-        set term=gnome-256color
-        colorscheme railscasts
-        set guifont=Inconsolata\ Normal\ 14
-    endif
-
-    if has("gui_mac") || has("gui_macvim")
-        set guifont=Inconsolata:h14
-=======
         set term=builtin_gui
         colorscheme tir_black
         set guifont=Inconsolata\ Medium\ 12
@@ -281,7 +272,6 @@ if has("gui_running")
 
     if has("gui_mac") || has("gui_macvim")
         set guifont=Inconsolata:15
->>>>>>> 8ef85eb4190f50fbd819d6682e4d8b65c37c3135
         " key binding for Command-T to behave properly
         " uncomment to replace the Mac Command-T key to Command-T plugin
         "macmenu &File.New\ Tab key=<nop>
@@ -427,5 +417,11 @@ set noswapfile
 set ts=4 sw=4 et
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
-let Tlist_Ctags_Cmd='/usr/local/Cellar/ctags/5.8/bin/ctags' 
+let g:Tlist_Ctags_Cmd='/usr/local/Cellar/ctags/5.8/bin/ctags' 
+
+fu! CTagGen()
+    :execute "!" . g:Tlist_Ctags_Cmd .  " -R ."
+endfunction
+
+nmap <silent> :ctg :call CTagGen() 
 
