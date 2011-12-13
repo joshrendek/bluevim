@@ -253,7 +253,7 @@ set hidden
 "Command-T configuration
 let g:CommandTMaxHeight=10
 let g:CommandTMatchWindowAtTop=1
-colorscheme tir_black 
+colorscheme zenburn
 
 if has("gui_running")
     "tell the term has 256 colors
@@ -279,7 +279,7 @@ if has("gui_running")
         " make Mac's Option key behave as the Meta key
         set invmmta
         try
-          set transparency=5
+          "set transparency=5
         catch
         endtry
     endif
