@@ -259,7 +259,7 @@ if has("gui_running")
     "tell the term has 256 colors
     set t_Co=256
 
-    colorscheme tir_black 
+    colorscheme zenburn
     set guitablabel=%M%t
     set lines=40
     set columns=115
@@ -424,4 +424,9 @@ fu! CTagGen()
 endfunction
 
 nmap <silent> :ctg :call CTagGen() 
-
+noremap <silent> ,# :call CommentLineToEnd('# ')<CR>+
+    " or c
+noremap <silent> ,* :call CommentLinePincer('/* ', ' */')<CR>+
+noremap <silent> ,/ :call CommentLineToEnd('// ')<CR>+
+    " or vimrc
+noremap <silent> ," :call CommentLineToEnd('" ')<CR>+
