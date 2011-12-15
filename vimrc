@@ -430,3 +430,6 @@ noremap <silent> ,* :call CommentLinePincer('/* ', ' */')<CR>+
 noremap <silent> ,/ :call CommentLineToEnd('// ')<CR>+
     " or vimrc
 noremap <silent> ," :call CommentLineToEnd('" ')<CR>+
+
+noremap <silent> ,pp ibinding.pry <CR>
+
