@@ -411,6 +411,7 @@ map ,u :source ~/.vimrc<cr> " update the system settings from my vimrc file
 
 " Directories for swp files
 nmap <leader>ff :FufFile **/<CR>
+nmap <leader>fb :FufBuffer **/<CR>
 set nobackup
 set nowritebackup
 set noswapfile
