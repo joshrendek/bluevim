@@ -242,6 +242,8 @@ filetype indent on
 
 "turn on syntax highlighting
 syntax on
+syntax enable
+set ofu=syntaxcomplete#Complete
 
 "some stuff to get the mouse going in term
 set mouse=a
@@ -434,3 +436,7 @@ noremap <silent> ," :call CommentLineToEnd('" ')<CR>+
 
 noremap <silent> ,pp ibinding.pry <CR>
 
+"Ruby code completion
+filetype plugin on
+"let g:rubycomplete_buffer_loading = 1
+let g:rubycomplete_rails = 1
