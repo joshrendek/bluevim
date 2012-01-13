@@ -255,13 +255,13 @@ set hidden
 "Command-T configuration
 let g:CommandTMaxHeight=10
 let g:CommandTMatchWindowAtTop=1
-colorscheme zenburn
+colorscheme anotherdark
 
 if has("gui_running")
     "tell the term has 256 colors
     set t_Co=256
 
-    colorscheme zenburn
+    colorscheme anotherdark
     set guitablabel=%M%t
     set lines=40
     set columns=115
