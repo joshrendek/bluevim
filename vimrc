@@ -268,7 +268,7 @@ if has("gui_running")
 
     if has("gui_gnome")
         set term=builtin_gui
-        colorscheme tir_black
+        colorscheme zenburn
         set guifont=Inconsolata\ Medium\ 12
     endif
 
