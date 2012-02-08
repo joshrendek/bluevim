@@ -450,4 +450,11 @@ vnoremap <A-j> :m'>+<CR>gv=gv
 
 noremap <silent> ,tdd :s/\[ ]/\[x]/g<CR>
 noremap <silent> ,tda i  [ ] 
-
+noremap  <Up> ""
+noremap! <Up> <Esc>
+noremap  <Down> ""
+noremap! <Down> <Esc>
+noremap  <Left> ""
+noremap! <Left> <Esc>
+noremap  <Right> ""
+noremap! <Right> <Esc>
