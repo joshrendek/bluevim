@@ -256,7 +256,6 @@ set hidden
 let g:CommandTMaxHeight=10
 let g:CommandTMatchWindowAtTop=1
 colorscheme molokai
-
 if has("gui_running")
     "tell the term has 256 colors
     set t_Co=256
