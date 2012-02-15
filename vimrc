@@ -396,7 +396,7 @@ map <C-l> <C-w>l
 nmap <C-s> :w<CR>
 
 "key mapping for tab navigation
-nmap <Tab> gt
+" nmap <Tab> gt
 nmap <S-Tab> gT
 
 "Key mapping for textmate-like indentation
@@ -438,7 +438,7 @@ noremap <silent> ,pp ibinding.pry <CR>
 "Ruby code completion
 filetype plugin on
 "let g:rubycomplete_buffer_loading = 1
-let g:rubycomplete_rails = 1
+" let g:rubycomplete_rails = 1
 
 nnoremap <A-j> :m+<CR>==
 nnoremap <A-k> :m-2<CR>==
@@ -449,11 +449,5 @@ vnoremap <A-j> :m'>+<CR>gv=gv
 
 noremap <silent> ,tdd :s/\[ ]/\[x]/g<CR>
 noremap <silent> ,tda i  [ ] 
-noremap  <Up> ""
-noremap! <Up> <Esc>
-noremap  <Down> ""
-noremap! <Down> <Esc>
-noremap  <Left> ""
-noremap! <Left> <Esc>
-noremap  <Right> ""
-noremap! <Right> <Esc>
+let g:SuperTabDefaultCompletionType = "context"
+
