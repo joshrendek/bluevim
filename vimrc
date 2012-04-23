@@ -7,7 +7,7 @@ call pathogen#runtime_append_all_bundles()
 "Use Vim settings, rather then Vi settings (much better!).
 "This must be first, because it changes other options as a side effect.
 set nocompatible
-
+set clipboard=unnamed
 "allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
@@ -255,19 +255,21 @@ set hidden
 "Command-T configuration
 let g:CommandTMaxHeight=10
 let g:CommandTMatchWindowAtTop=1
-colorscheme molokai
+colorscheme jellybeans
+set background=dark
+set t_Co=256
+
+
 if has("gui_running")
     "tell the term has 256 colors
     set t_Co=256
 
-    colorscheme molokai
     set guitablabel=%M%t
     set lines=40
     set columns=115
 
     if has("gui_gnome")
         set term=builtin_gui
-        colorscheme zenburn
         set guifont=Inconsolata\ Medium\ 12
     endif
 
@@ -309,7 +311,7 @@ inoremap <C-L> <C-O>:nohls<CR>
 nnoremap <leader>b :BufExplorer<cr>
 
 "map to CommandT TextMate style finder
-nnoremap <leader>t :CommandT<CR>
+nnoremap ,ff :CommandT<CR>
 
 "map Q to something useful
 noremap Q gq
@@ -450,4 +452,44 @@ vnoremap <A-j> :m'>+<CR>gv=gv
 noremap <silent> ,tdd :s/\[ ]/\[x]/g<CR>
 noremap <silent> ,tda i  [ ] 
 let g:SuperTabDefaultCompletionType = "context"
+function! RunTests(filename)
+    " Write the file and run tests for the given filename
+    :w
+    :silent !echo;echo;echo;echo;echo
+    exec ":!rspec " . a:filename
+endfunction
 
+function! SetTestFile()
+    " Set the spec file that tests will be run for.
+    let t:grb_test_file=@%
+endfunction
+
+function! RunTestFile(...)
+    if a:0
+        let command_suffix = a:1
+    else
+        let command_suffix = ""
+    endif
+
+    " Run the tests for the previously-marked file.
+    let in_spec_file = match(expand("%"), '_spec.rb$') != -1
+    if in_spec_file
+        call SetTestFile()
+    elseif !exists("t:grb_test_file")
+        return
+    end
+    call RunTests(t:grb_test_file . command_suffix)
+endfunction
+
+function! RunNearestTest()
+    let spec_line_number = line('.')
+    call RunTestFile(":" . spec_line_number)
+endfunction
+
+" Run this file
+map <leader>r :call RunTestFile()<cr>
+" Run only the example under the cursor
+map <leader>R :call RunNearestTest()<cr>
+" Run all test files
+map <leader>ra :call RunTests('spec')<cr>
+set shell=/bin/sh
