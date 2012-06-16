@@ -456,7 +456,7 @@ function! RunTests(filename)
     " Write the file and run tests for the given filename
     :w
     :silent !echo;echo;echo;echo;echo
-    exec ":!rspec " . a:filename
+    exec ":!rspec --color " . a:filename
 endfunction
 
 function! SetTestFile()
@@ -493,3 +493,4 @@ map <leader>R :call RunNearestTest()<cr>
 " Run all test files
 map <leader>ra :call RunTests('spec')<cr>
 set shell=/bin/sh
+set foldmethod=marker
