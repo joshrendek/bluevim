@@ -12,7 +12,7 @@ set clipboard=unnamed
 set backspace=indent,eol,start
 
 "store lots of :cmdline history
-set history=1000
+set history=100
 
 set showcmd     "show incomplete cmds down the bottom
 set showmode    "show current mode down the bottom
@@ -325,7 +325,7 @@ inoremap <C-j>       <Down>
 let g:ragtag_global_maps = 1
 
 "mark syntax errors with :signs
-let g:syntastic_enable_signs=1
+""let g:syntastic_enable_signs=1
 
 "key mapping for vimgrep result navigation
 map <A-o> :copen<CR>
